@@ -12,7 +12,9 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "dev:docker-build": "docker build . -t front-end",
+    "dev:docker-run": "docker run -it --rm -p 3000:3000 front-end"
   },
   "dependencies": {
     "autoprefixer": "^10.4.20",
