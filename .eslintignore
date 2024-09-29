@@ -6,3 +6,6 @@ public
 .eslint.json
 .prettierrc
 .prettierignore
+*.ico
+*.css
+*.scss
