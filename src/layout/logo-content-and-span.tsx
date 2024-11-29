@@ -1,5 +1,3 @@
-'use client';
-
 import logo from '@public/images/LogotipoPrincipal.svg';
 import Image from 'next/image';
 
