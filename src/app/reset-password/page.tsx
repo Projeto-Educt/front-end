@@ -1,23 +1,16 @@
-import LoginForm from '@/components/forms/login';
+import ContainerFormResetPassword from '@/components/containers/container-form-reset-password';
 import GridTwoLayout from '@/layout/grid-two';
 import LogoContentAndSpan from '@/layout/logo-content-and-span';
-import womanWorking from '@public/images/teen-woman-working-her-laptop.svg';
+import womanWorking from '@public/images/teen-asian-woman-working-her-laptop.svg';
 import Image from 'next/image';
-import Link from 'next/link';
 
-export default function Login() {
+export default function ResetPassword() {
   return (
     <GridTwoLayout
       columnOne={{
         children: (
-          <LogoContentAndSpan
-            textSpan="Ao fazer login em sua conta, você concorda com nossos termos de Serviço 
-e política de privacidade."
-          >
-            <LoginForm />
-            <Link className="text-primary-600" href="./password-recovery">
-              Esqueci minha senha
-            </Link>
+          <LogoContentAndSpan textSpan="Para recuperar sua senha, você concorda com nossos Termos de Serviço e Política de Privacidade.">
+            <ContainerFormResetPassword />
           </LogoContentAndSpan>
         ),
       }}
