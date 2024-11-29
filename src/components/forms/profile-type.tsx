@@ -10,7 +10,7 @@ interface IProfileType {
   onChange?: (value: string) => void;
 }
 
-export default function ProfileType({ onChange }: IProfileType) {
+export default function ProfileTypeForm({ onChange }: IProfileType) {
   const [profileType, setProfileType] = useState<'mentor' | 'aluno' | null>(null);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {

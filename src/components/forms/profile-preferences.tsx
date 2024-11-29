@@ -6,7 +6,7 @@ interface IProfilePreferences {
   onChange?: () => void;
 }
 
-export default function ProfilePreferences({ onChange }: IProfilePreferences) {
+export default function ProfilePreferencesForm({ onChange }: IProfilePreferences) {
   const backPage = () => {
     onChange?.();
   };

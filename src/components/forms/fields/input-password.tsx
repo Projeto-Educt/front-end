@@ -18,7 +18,7 @@ interface IInputPassword {
 export default function InputPassword(props: IInputPassword) {
   const [showPassword, setShowPassword] = useState<boolean>(false);
   return (
-    <div className="relative">
+    <div className="relative w-full">
       <Input type={showPassword ? 'text' : 'password'} {...props} />
       <i className="inline-block p-2 cursor-pointer absolute top-0 right-1">
         {showPassword && (
