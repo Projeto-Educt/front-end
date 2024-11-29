@@ -1,4 +1,4 @@
-interface ISecondaryButton {
+export interface ISecondaryButton {
   children: React.ReactNode;
   className?: string;
   type?: 'submit' | 'reset' | 'button';
