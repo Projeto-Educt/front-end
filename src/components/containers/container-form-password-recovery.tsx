@@ -11,7 +11,7 @@ export default function ContainerFormPasswordRecovery() {
   return (
     <>
       {!sendEmail && (
-        <div className="flex flex-col gap-7">
+        <div className="flex flex-col gap-7 max-w-md">
           <PasswordRecoveryForm changeOnSubmit={() => setSendEmail(true)} />
           <div className="w-full flex items-center gap-1">
             <span className="inline-block w-full h-px bg-gray-400"></span>

@@ -17,7 +17,7 @@ export default function ResetPasswordForm({ changeOnSubmit }: IResetPasswordForm
   };
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-3 max-w-md">
-      <Image src={padlock} alt="Cadeado" />
+      <Image className="w-40 h-40" src={padlock} alt="Cadeado" />
       <PrimaryTitle title="Redefinir senha" />
       <p className="py-2">
         Insira uma nova senha para acessar sua conta. Lembre-se de escolher uma senha segura e fácil
