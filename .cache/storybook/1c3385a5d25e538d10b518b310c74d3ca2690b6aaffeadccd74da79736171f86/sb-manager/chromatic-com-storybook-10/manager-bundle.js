@@ -1,0 +1,1 @@
+import '/home/staviasz/Desktop/educt/front-end/node_modules/.pnpm/@chromatic-com+storybook@1.9.0_react@18.3.1/node_modules/@chromatic-com/storybook/dist/manager.mjs';

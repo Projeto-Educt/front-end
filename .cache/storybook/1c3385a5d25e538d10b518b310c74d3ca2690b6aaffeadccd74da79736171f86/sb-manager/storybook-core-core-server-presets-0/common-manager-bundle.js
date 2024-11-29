@@ -1,0 +1,1 @@
+import '/home/staviasz/Desktop/educt/front-end/node_modules/.pnpm/@storybook+core@8.4.5_prettier@3.4.1/node_modules/@storybook/core/dist/core-server/presets/common-manager.js';

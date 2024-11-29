@@ -1,11 +1,8 @@
-FROM node:21-alpine
+FROM 'node:20-alpine'
 
 WORKDIR /app
-
-COPY package*.json .
-
-RUN npm install
+RUN npm install -g pnpm
 
 COPY . .
 
-CMD ["npm", "run", "dev"]
+CMD ["sh", "-c", "pnpm install && pnpm dev"]
