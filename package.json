@@ -15,19 +15,15 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "dev:docker": "docker compose up",
-    "dev:docker-kill": "docker compose down"  
-    
+    "dev:docker-kill": "docker compose down"
   },
   "dependencies": {
     "autoprefixer": "^10.4.20",
     "next": "14.2.18",
     "next-auth": "^4.24.8",
     "react": "^18",
-    
     "react-dom": "^18",
-    
     "sass": "^1.79.4"
-
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^1.9.0",

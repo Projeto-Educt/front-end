@@ -1,4 +1,4 @@
-interface IPrimaryTitle {
+export interface IPrimaryTitle {
   title: string;
 }
 

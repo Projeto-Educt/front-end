@@ -3,10 +3,9 @@
 import check from '@public/icons/check.svg';
 import Image from 'next/image';
 
-interface IStages {
+export interface IStages {
   totalStages: number;
   currentStage?: number;
-  onChange?: () => void;
 }
 
 export default function Stages({ totalStages, currentStage }: IStages) {
