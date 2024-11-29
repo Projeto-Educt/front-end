@@ -1,6 +1,6 @@
+import PrimaryLinkButton from '@/components/button/primary-link-button';
 import emailConfirmed from '@public/images/confirmed-email.svg';
 import Image from 'next/image';
-import PrimaryButton from '../button/primary-button';
 export default function ConfirmedEmailComponent() {
   return (
     <div className="max-w-md w-full max-h-96 h-full">
@@ -12,7 +12,7 @@ export default function ConfirmedEmailComponent() {
         Seu e-mail foi confirmado com sucesso. Clique em <strong>continuar</strong> para finalizar
         seu cadastro.
       </p>
-      <PrimaryButton>Continuar</PrimaryButton>
+      <PrimaryLinkButton href="register-user/create-profile">Continuar</PrimaryLinkButton>
     </div>
   );
 }

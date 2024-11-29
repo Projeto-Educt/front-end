@@ -1,7 +1,8 @@
 import PrimaryButton from '@/components/button/primary-button';
 import Input from '@/components/forms/fields/input';
+import InputPassword from '@/components/forms/fields/input-password';
+import PrimaryTitle from '@/components/titles/primary-title';
 import Link from 'next/link';
-import InputPassword from './fields/input-password';
 
 interface IRegisterUserForm {
   changeOnSubmit?: () => void;
@@ -18,7 +19,7 @@ export default function RegisterUserForm({ changeOnSubmit }: IRegisterUserForm) 
       className="p-4 max-w-lg flex flex-col items-center sm:items-start"
       onSubmit={handleSubmit}
     >
-      <h1 className="text-3xl font-bold text-primary-600 mb-3 py-2">Faça seu Registro</h1>
+      <PrimaryTitle title="Faça seu Registro" />
       <p className="py-2">
         Crie sua conta de forma <strong>100% gratuita</strong> e faça parte de uma comunidade de
         aprendizado mútuo.

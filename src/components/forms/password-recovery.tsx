@@ -1,5 +1,6 @@
 import PrimaryButton from '@/components/button/primary-button';
 import Input from '@/components/forms/fields/input';
+import PrimaryTitle from '@/components/titles/primary-title';
 
 interface IPasswordRecoveryForm {
   changeOnSubmit?: () => void;
@@ -13,7 +14,7 @@ export default function PasswordRecoveryForm({ changeOnSubmit }: IPasswordRecove
 
   return (
     <form className="flex flex-col items-center sm:items-start gap-3" onSubmit={handleSubmit}>
-      <h1 className="text-3xl font-bold text-primary-600">Recuperação de senha</h1>
+      <PrimaryTitle title="Recuperação de senha" />
       <p className="py-2">
         Digite o e-mail associado à sua conta enviaremos um link para que você possa redefinir sua
         senha.
