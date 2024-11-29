@@ -14,16 +14,20 @@
     "test:cov": "jest --coverage",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "dev:docker-build": "docker build . -t front-end",
-    "dev:docker-run": "docker run -it --rm -p 3000:3000 front-end"
+    "dev:docker": "docker compose up",
+    "dev:docker-kill": "docker compose down"  
+    
   },
   "dependencies": {
     "autoprefixer": "^10.4.20",
-    "next": "14.2.3",
+    "next": "14.2.18",
     "next-auth": "^4.24.8",
     "react": "^18",
+    
     "react-dom": "^18",
+    
     "sass": "^1.79.4"
+
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^1.9.0",
@@ -38,16 +42,16 @@
     "@storybook/react": "^8.3.4",
     "@storybook/test": "^8.3.4",
     "@swc/jest": "^0.2.36",
-    "@testing-library/jest-dom": "^6.5.0",
+    "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.0.1",
-    "@types/jest": "^29.5.13",
+    "@types/jest": "^29.5.14",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "@typescript-eslint/eslint-plugin": "^8.7.0",
     "@typescript-eslint/parser": "^8.7.0",
-    "eslint": "^8",
-    "eslint-config-next": "14.2.3",
+    "eslint": "8.57.1",
+    "eslint-config-next": "14.2.18",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
     "eslint-plugin-storybook": "^0.9.0",

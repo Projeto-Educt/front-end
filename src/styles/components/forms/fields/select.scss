@@ -1,0 +1,48 @@
+.select {
+  @apply w-full h-[42px] relative rounded-lg p-2 flex items-center border border-gray-200 text-gray-500 bg-white;
+}
+
+.label {
+  @apply absolute z-10 top-[20%] left-2;
+  transition: top 0.3s ease;
+}
+
+.options {
+  @apply absolute top-full left-[-1px] rounded-b-lg border border-gray-200 z-20 bg-white;
+  width: calc(100% + 2px);
+}
+
+.option {
+  @apply p-2 cursor-pointer hover:bg-primary-600 hover:text-white;
+}
+
+.select-open {
+  @apply border-primary-600 border-b-0 rounded-b-none;
+  > .options {
+    @apply border-primary-600 rounded-md border-t-0 rounded-t-none;
+  }
+
+  & .label {
+    @apply text-primary-600 top-[-22%] left-3 text-xs;
+
+    & .span-line {
+      @apply bg-white inline-block h-2 w-[107%] absolute top-1 z-[-1] ms-[-3px];
+    }
+  }
+}
+
+.has-value {
+  @apply border-primary-600;
+
+  & .label {
+    @apply text-primary-600 top-[-22%] left-3 text-xs;
+
+    & .span-line {
+      @apply bg-white inline-block h-2 w-[107%] absolute top-1 z-[-1] ms-[-3px];
+    }
+  }
+}
+
+.paragraph-value {
+  @apply text-gray-900;
+}
