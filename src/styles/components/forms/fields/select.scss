@@ -2,7 +2,7 @@
   @apply w-full h-[42px] relative rounded-lg p-2 flex items-center border border-gray-200 text-gray-500 bg-white;
 
   & .label {
-    @apply absolute z-10 top-[20%] left-2;
+    @apply absolute z-10 top-[20%] left-2 capitalize;
     transition: top 0.3s ease;
     > .span-line {
       @apply hidden;
@@ -15,7 +15,7 @@
   }
 
   & .option {
-    @apply p-2 cursor-pointer hover:bg-primary-600 hover:text-white;
+    @apply p-2 cursor-pointer hover:bg-primary-600 hover:text-white capitalize;
   }
 }
 

@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 export default function SendLinkToPasswordRecovery() {
   return (
-    <div>
+    <div className="max-w-md">
       <Image src={emailSent} alt="Email Enviado" />
       <PrimaryTitle title="Email enviado com sucesso" />
       <p>Confira seu e-mail e use o link que enviamos para confirmar sua nova senha.</p>

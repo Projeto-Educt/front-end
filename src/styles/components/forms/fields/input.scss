@@ -6,7 +6,7 @@
   @apply relative bg-transparent w-full;
 
   .label {
-    @apply absolute text-gray-500 z-10;
+    @apply absolute text-gray-500 z-10 capitalize;
     left: 12px;
     top: 22%;
     transition:
