@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { useState } from 'react';
 import Input from './input';
 
-interface IInputPassword {
+export interface IInputPassword {
   type?: 'text' | 'password';
   label: string;
   id?: string;

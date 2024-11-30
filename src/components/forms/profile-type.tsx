@@ -2,7 +2,7 @@
 
 import PrimaryButton from '@/components/button/primary-button';
 import CardChooseProfile from '@/components/forms/fields/card-choose-profile';
-import studentIcon from '@public/icons/simple-icon_codestudent.jpg';
+import studentIcon from '@public/icons/simple-icon_codestudent.png';
 import mentorIcon from '@public/icons/simple-icons_codementor.svg';
 import { useState } from 'react';
 

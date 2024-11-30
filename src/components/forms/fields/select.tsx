@@ -5,7 +5,7 @@ import arrow from '@public/icons/down-arrow-svgrepo-com.svg';
 import Image from 'next/image';
 import { useState } from 'react';
 
-interface ISelect {
+export interface ISelect {
   label: string;
   options: string[];
 }
@@ -27,7 +27,7 @@ export default function Select({ options, label }: ISelect) {
         </label>
         {value && <p className="paragraph-value">{value}</p>}
         <Image
-          className="w-3 h-3 absolute top-3 right-2 cursor-pointer"
+          className="w-3 h-3 absolute top-[14px] right-2 cursor-pointer"
           src={arrow}
           alt="Seta para baixo"
         />

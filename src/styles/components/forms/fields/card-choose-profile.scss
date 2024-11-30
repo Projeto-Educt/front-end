@@ -1,0 +1,11 @@
+.card:has(input[type='radio']:checked) {
+  @apply border-primary-600 bg-primary-50 text-primary-600;
+
+  & .paragraph {
+    @apply text-primary-600;
+  }
+
+  & img {
+    filter: invert(20%) sepia(62%) saturate(4000%) hue-rotate(200deg) brightness(95%) contrast(85%);
+  }
+}

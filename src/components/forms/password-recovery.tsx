@@ -13,7 +13,10 @@ export default function PasswordRecoveryForm({ changeOnSubmit }: IPasswordRecove
   };
 
   return (
-    <form className="flex flex-col items-center sm:items-start gap-3" onSubmit={handleSubmit}>
+    <form
+      className="flex flex-col items-center sm:items-start gap-3 max-w-md"
+      onSubmit={handleSubmit}
+    >
       <PrimaryTitle title="Recuperação de senha" />
       <p className="py-2">
         Digite o e-mail associado à sua conta enviaremos um link para que você possa redefinir sua

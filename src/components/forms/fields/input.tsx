@@ -3,7 +3,7 @@
 import '@/styles/components/forms/fields/input.scss';
 import { useState } from 'react';
 
-interface IInput {
+export interface IInput {
   type?: 'text' | 'email' | 'password' | 'number' | 'tel' | 'date' | 'time';
   label: string;
   id?: string;
