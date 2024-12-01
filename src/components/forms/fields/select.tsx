@@ -19,8 +19,17 @@ export default function Select({ options, label }: ISelect) {
     setOpenOptions(false);
   };
   return (
-    <div className={`select ${openOptions ? 'select-open' : ''} ${value ? 'has-value' : ''}`}>
-      <div className="w-full h-full" onClick={() => setOpenOptions(!openOptions)}>
+    <div
+      className={`select ${openOptions ? 'select-open' : ''} ${value ? 'has-value' : ''}`}
+      role="combobox"
+      aria-expanded={openOptions}
+      aria-controls="options-list"
+    >
+      <div
+        className="w-full h-full"
+        onClick={() => setOpenOptions(!openOptions)}
+        data-testid="select"
+      >
         <label className=" label text-nowrap">
           <span className="span-line"></span>
           {label}
@@ -33,9 +42,15 @@ export default function Select({ options, label }: ISelect) {
         />
       </div>
       {openOptions && (
-        <div className="options">
+        <div className="options" id="options-list" role="listbox">
           {options.map(option => (
-            <p className="option" key={option} onClick={() => handleValue(option)}>
+            <p
+              className="option"
+              key={option}
+              onClick={() => handleValue(option)}
+              role="option"
+              aria-selected={option === value}
+            >
               {option}
             </p>
           ))}

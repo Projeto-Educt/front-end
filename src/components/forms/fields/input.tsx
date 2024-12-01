@@ -29,6 +29,7 @@ export default function Input({ type, label, id, name, value, onChange }: IInput
         name={name || label}
         value={inputValue}
         onChange={onChangeInput}
+        role="textbox"
       />
       <label className="label" htmlFor={id || label}>
         {label}
