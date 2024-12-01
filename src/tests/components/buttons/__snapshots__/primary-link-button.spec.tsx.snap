@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PrimaryLinkButton Should match snapshot 1`] = `
+<div>
+  <div
+    class="text-white bg-primary-600 rounded-md h-10 text-center w-full font-bold flex items-center justify-center undefined"
+  >
+    <a
+      class="w-full"
+      href="#"
+      target="_self"
+    >
+      Jest
+    </a>
+  </div>
+</div>
+`;

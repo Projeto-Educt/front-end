@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PrimaryButton Should match snapshot 1`] = `
+<div>
+  <button
+    class="text-primary-600 bg-white border border-primary-600 rounded-md h-10 text-center w-full font-bold undefined"
+    type="button"
+  >
+    Jest
+  </button>
+</div>
+`;

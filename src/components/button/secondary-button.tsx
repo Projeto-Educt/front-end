@@ -5,11 +5,17 @@ export interface ISecondaryButton {
   onClick?: () => void;
 }
 
-export default function SecondaryButton({ children, className, onClick }: ISecondaryButton) {
+export default function SecondaryButton({
+  children,
+  className,
+  onClick,
+  type = 'button',
+}: ISecondaryButton) {
   return (
     <button
       className={`text-primary-600 bg-white border border-primary-600 rounded-md h-10 text-center w-full font-bold ${className}`}
       onClick={onClick}
+      type={type}
     >
       {children}
     </button>
