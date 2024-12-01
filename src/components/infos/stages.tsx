@@ -28,7 +28,7 @@ export default function Stages({ totalStages, currentStage }: IStages) {
         {stageArray.map((_, index) => {
           const isCompleted = index < currentStageIndex;
           return (
-            <div key={index} className="flex gap-1 items-center">
+            <div key={index} className="flex gap-1 items-center" data-testid="stage-item">
               <span
                 className={`flex items-center justify-center w-6 h-6 rounded-full 
                  text-gray-800 border border-gray-200 text-xs ${isCompleted ? 'bg-primary-600' : 'bg-white'}`}
