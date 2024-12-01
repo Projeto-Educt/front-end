@@ -22,6 +22,7 @@ e política de privacidade."
         ),
       }}
       columnTwo={{
+        className: 'hidden sm:block',
         children: (
           <Image
             className="w-full h-screen object-cover p-2 rounded-3xl"
