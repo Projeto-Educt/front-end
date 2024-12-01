@@ -11,7 +11,7 @@ export default function LoginForm() {
         <p className="py-2">Faça login para acessar sua conta e continuar sua jornada conosco</p>
         <span className="py-2">Preencha os campos abaixo:</span>
       </div>
-      <Input label="Insira seu e-mail" />
+      <Input label="Insira seu e-mail" type="email" />
       <InputPassword label="Senha" />
       <PrimaryButton type="submit">Confirmar</PrimaryButton>
     </form>

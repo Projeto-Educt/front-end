@@ -32,12 +32,12 @@ export default function RegisterUserForm({ changeOnSubmit }: IRegisterUserForm) 
         <InputPassword label="Repetir senha" />
         <PrimaryButton type="submit">Confirmar</PrimaryButton>
 
-        <span className="w-full text-center sm:text-start">
+        <p className="w-full text-center sm:text-start">
           Ja tem uma conta?{' '}
           <Link className="text-primary-600 underline" href="/login">
             Acessar
           </Link>
-        </span>
+        </p>
       </div>
     </form>
   );

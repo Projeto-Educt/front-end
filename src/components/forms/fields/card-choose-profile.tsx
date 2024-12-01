@@ -28,7 +28,10 @@ export default function CardChooseProfile({
   onChange,
 }: ICardChooseProfile) {
   return (
-    <div className="flex gap-3 border border-gray-200 p-6 rounded-lg justify-between card">
+    <div
+      className="flex gap-3 border border-gray-200 p-6 rounded-lg justify-between card"
+      data-testid="card-choose-profile"
+    >
       <div className="flex gap-3">
         <Image className="w-6 h-6 mt-1" src={image.src} alt={image.alt} width={24} height={24} />
         <div>
