@@ -20,7 +20,7 @@ export default function ContainerFormPasswordRecovery() {
           </div>
           <p>
             Ja tem uma conta?
-            <Link className="text-primary-600 ms-1" href="./password-recovery">
+            <Link className="text-primary-600 ms-1" href="/login">
               Acessar
             </Link>
           </p>

@@ -1,5 +1,5 @@
 import ProfilePreferencesForm from '@/components/forms/profile-preferences';
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 
 describe('ProfilePreferences', () => {
   it('should render correctly', () => {
@@ -27,5 +27,30 @@ describe('ProfilePreferences', () => {
     expect(combobox1.querySelector('label')).toHaveTextContent('Nível de escolaridade');
     expect(combobox2.querySelector('label')).toHaveTextContent('Curso de interesse');
     expect(combobox3.querySelector('label')).toHaveTextContent('Faculdade de interesse');
+  });
+
+  it('Should execute onClick', () => {
+    const onClick = jest.fn();
+    render(<ProfilePreferencesForm onChange={onClick} />);
+
+    const button = screen.getByRole('button', { name: 'Voltar' });
+    const comboboxes = screen.getAllByTestId('select');
+
+    const [combobox1, combobox2, combobox3] = comboboxes;
+
+    fireEvent.click(combobox1);
+    let option = screen.getAllByRole('option')[0];
+    fireEvent.click(option);
+
+    fireEvent.click(combobox2);
+    option = screen.getAllByRole('option')[1];
+    fireEvent.click(option);
+
+    fireEvent.click(combobox3);
+    option = screen.getAllByRole('option')[2];
+    fireEvent.click(option);
+
+    fireEvent.click(button);
+    expect(onClick).toHaveBeenCalled();
   });
 });

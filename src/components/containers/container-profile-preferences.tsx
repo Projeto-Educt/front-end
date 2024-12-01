@@ -11,7 +11,7 @@ export default function ContainerProfilePreferences() {
 
   const handleProfileType = (value: string | null) => {
     setProfileType(value as 'mentor' | 'aluno');
-    value ? setStage(1) : setStage(0);
+    value && setStage(1);
   };
 
   return (

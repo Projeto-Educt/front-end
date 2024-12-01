@@ -22,7 +22,7 @@ export default function PasswordRecoveryForm({ changeOnSubmit }: IPasswordRecove
         Digite o e-mail associado à sua conta enviaremos um link para que você possa redefinir sua
         senha.
       </p>
-      <span className="py-2">Preencha os campos abaixo:</span>
+      <p className="py-2">Preencha os campos abaixo:</p>
       <Input label="Insira seu e-mail" type="email" />
       <PrimaryButton type="submit">Confirmar</PrimaryButton>
     </form>

@@ -17,13 +17,12 @@ const config = {
   collectCoverageFrom: [
     'src/**/*.{ts,tsx}',
     '!src/**/*.d.ts',
-    '!src/**/stories.tsx',
+    '!src/stories/**/*',
     '!src/types/**/*',
-    '!src/app/layout.tsx',
     '!node_modules/**',
-    '!src/app/api/**',
     '!src/providers/sessionProvider.tsx',
     '!src/app/**/*',
+    '!src/pages/**/*',
   ],
 
   moduleNameMapper: {
