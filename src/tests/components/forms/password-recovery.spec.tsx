@@ -10,13 +10,11 @@ describe('PasswordRecoveryForm', () => {
       'Digite o e-mail associado à sua conta enviaremos um link para que você possa redefinir sua senha.',
     );
 
-    const info = screen.getByText('Preencha os campos abaixo:');
     const input = screen.getByRole('textbox');
     const button = screen.getByRole('button', { name: 'Confirmar' });
 
     expect(heading).toBeInTheDocument();
     expect(paragraph).toBeInTheDocument();
-    expect(info).toBeInTheDocument();
     expect(input).toBeInTheDocument();
     expect(button).toBeInTheDocument();
 

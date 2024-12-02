@@ -15,10 +15,10 @@ export default function ContainerProfilePreferences() {
   };
 
   return (
-    <div className={`mt-4 ${stage === 0 ? 'pt-1' : ''}`}>
+    <>
       <Stages totalStages={2} currentStage={stage} />
       {stage === 0 && <ProfileTypeForm onChange={handleProfileType} />}
       {stage === 1 && <ProfilePreferencesForm onChange={() => setStage(v => v - 1)} />}
-    </div>
+    </>
   );
 }

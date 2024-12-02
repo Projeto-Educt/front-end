@@ -5,19 +5,13 @@ describe('ResetPasswordForm', () => {
   it('should render correctly', () => {
     render(<ResetPasswordForm />);
 
-    const img = screen.getByRole('img', { name: 'Cadeado' });
-    const heading = screen.getByRole('heading', { name: 'Redefinir senha' });
-    const paragraph = screen.getByText(
-      'Insira uma nova senha para acessar sua conta. Lembre-se de escolher uma senha segura e fácil de lembrar.',
-    );
-    const info = screen.getByText('Preencha os campos abaixo:');
+    const heading = screen.getByRole('heading', { name: 'Redefinir sua senha' });
+    const paragraph = screen.getByText('Insira uma nova senha para acessar sua conta.');
     const inputs = screen.getAllByRole('textbox');
     const button = screen.getByRole('button', { name: 'Confirmar' });
 
-    expect(img).toBeInTheDocument();
     expect(heading).toBeInTheDocument();
     expect(paragraph).toBeInTheDocument();
-    expect(info).toBeInTheDocument();
     expect(button).toBeInTheDocument();
     expect(inputs).toHaveLength(2);
   });

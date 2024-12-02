@@ -5,17 +5,15 @@ describe('LoginForm', () => {
   it('should render correctly', () => {
     render(<LoginForm />);
 
-    const heading = screen.getByRole('heading', { name: 'Entre na sua conta' });
+    const heading = screen.getByRole('heading', { name: 'Faça o seu Login' });
     const paragraph = screen.getByText(
       'Faça login para acessar sua conta e continuar sua jornada conosco',
     );
-    const info = screen.getByText('Preencha os campos abaixo:');
     const inputs = screen.getAllByRole('textbox');
     const button = screen.getByRole('button', { name: 'Confirmar' });
 
     expect(heading).toBeInTheDocument();
     expect(paragraph).toBeInTheDocument();
-    expect(info).toBeInTheDocument();
     expect(button).toBeInTheDocument();
 
     expect(inputs).toHaveLength(2);

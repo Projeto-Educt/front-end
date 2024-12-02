@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
-import type { ILogoContentAndSpan } from '@/layout/logo-content-and-span';
-import LogoContentAndSpan from '@/layout/logo-content-and-span';
+import type { ILogoContentAndSpan } from '@/layout/logo-content';
+import LogoContentAndSpan from '@/layout/logo-content';
 
 export default {
   title: 'layouts/logo-content-and-span',

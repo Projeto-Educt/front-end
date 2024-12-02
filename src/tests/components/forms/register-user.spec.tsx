@@ -9,10 +9,10 @@ describe('RegisterUserForm', () => {
     const paragraph = screen.getAllByRole('paragraph');
     const inputs = screen.getAllByRole('textbox');
     const button = screen.getByRole('button', { name: 'Confirmar' });
-    const link = screen.getByRole('link', { name: 'Acessar' });
+    const link = screen.getByRole('link', { name: 'Faça o Login' });
 
     expect(heading).toBeInTheDocument();
-    expect(paragraph).toHaveLength(3);
+    expect(paragraph).toHaveLength(2);
     expect(inputs).toHaveLength(4);
     expect(button).toBeInTheDocument();
     expect(link).toHaveAttribute('href', '/login');
@@ -21,13 +21,12 @@ describe('RegisterUserForm', () => {
   it('Should render correctly text paragraphs', () => {
     render(<RegisterUserForm />);
 
-    const [paragraph1, paragraph2, paragraph3] = screen.getAllByRole('paragraph');
+    const [paragraph1, paragraph3] = screen.getAllByRole('paragraph');
 
     expect(paragraph1).toHaveTextContent(
       'Crie sua conta de forma 100% gratuita e faça parte de uma comunidade de aprendizado mútuo.',
     );
-    expect(paragraph2).toHaveTextContent('Preencha os campos abaixo:');
-    expect(paragraph3).toHaveTextContent('Ja tem uma conta? Acessar');
+    expect(paragraph3).toHaveTextContent('Ja tem uma conta? Faça o Login');
   });
 
   it('Should render correctly inputs', () => {

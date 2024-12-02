@@ -8,10 +8,10 @@ describe('ContainerFormRegister', () => {
     const paragraph = screen.getAllByRole('paragraph');
     const inputs = screen.getAllByRole('textbox');
     const button = screen.getByRole('button', { name: 'Confirmar' });
-    const link = screen.getByRole('link', { name: 'Acessar' });
+    const link = screen.getByRole('link', { name: 'Faça o Login' });
 
     expect(heading).toBeInTheDocument();
-    expect(paragraph).toHaveLength(3);
+    expect(paragraph).toHaveLength(2);
     expect(inputs).toHaveLength(4);
     expect(button).toBeInTheDocument();
     expect(link).toHaveAttribute('href', '/login');

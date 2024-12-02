@@ -15,34 +15,34 @@
   }
 
   & .option {
-    @apply p-2 cursor-pointer hover:bg-primary-600 hover:text-white capitalize;
+    @apply p-2 cursor-pointer hover:bg-primary-400 hover:text-white capitalize;
   }
 }
 
 .select-open {
-  @apply border-primary-600 border-b-0 rounded-b-none;
+  @apply border-primary-400 border-b-0 rounded-b-none;
   > .options {
-    @apply border-primary-600 rounded-md border-t-0 rounded-t-none;
+    @apply border-primary-400 rounded-md border-t-0 rounded-t-none;
   }
 
   & .label {
     @apply text-primary-600 top-[-22%] left-3 text-xs;
 
     & .span-line {
-      @apply bg-white inline-block h-2 absolute top-1 z-[-1] ms-[-1px] block;
+      @apply bg-white inline-block h-2 absolute top-1 z-[-1] ms-[-1px];
       width: calc(100% + 6px);
     }
   }
 }
 
 .has-value {
-  @apply border-primary-600;
+  @apply border-primary-400;
 
   & .label {
     @apply text-primary-600 top-[-22%] left-3 text-xs;
 
     & .span-line {
-      @apply bg-white inline-block h-2 absolute top-1 z-[-1] ms-[-3px] block;
+      @apply bg-white inline-block h-2 absolute top-1 z-[-1] ms-[-3px];
       width: calc(100% + 6px);
     }
   }

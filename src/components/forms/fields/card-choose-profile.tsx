@@ -36,7 +36,7 @@ export default function CardChooseProfile({
         <Image className="w-6 h-6 mt-1" src={image.src} alt={image.alt} width={24} height={24} />
         <div>
           <h2 className="font-bold">{title}</h2>
-          <p className="text-xs text-gray-500 paragraph">{description}</p>
+          <p className="paragraph-description text-xs p-0">{description}</p>
         </div>
       </div>
       <input

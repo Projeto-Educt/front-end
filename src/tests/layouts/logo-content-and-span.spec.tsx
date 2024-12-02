@@ -1,4 +1,4 @@
-import LogoContentAndSpan from '@/layout/logo-content-and-span';
+import LogoContentAndSpan from '@/layout/logo-content';
 import { render } from '@testing-library/react';
 
 describe('LogoContentAndSpan', () => {

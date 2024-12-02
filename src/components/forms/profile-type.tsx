@@ -1,6 +1,5 @@
 'use client';
 
-import PrimaryButton from '@/components/button/primary-button';
 import CardChooseProfile from '@/components/forms/fields/card-choose-profile';
 import studentIcon from '@public/icons/simple-icon_codestudent.png';
 import mentorIcon from '@public/icons/simple-icons_codementor.svg';
@@ -21,30 +20,30 @@ export default function ProfileTypeForm({ onChange }: IProfileType) {
 
   return (
     <div className="max-w-md max-h-[544px] h-full flex flex-col justify-between items-center sm:items-start mt-4">
-      <h1 className="text-3xl font-bold py-3">Qual é o seu perfil?</h1>
-      <p className="text-center sm:text-start mb-4">
+      <h1 className="primary-title py-3">Qual é o seu perfil?</h1>
+      <p className="paragraph-description mb-4">
         Cadastre-se como mentor(a) ou aluno(a) e faça parte da nossa comunidade. Transforme sua
         jornada de aprendizado ou compartilhe seu conhecimento.
       </p>
       <form className="flex flex-col gap-3 mt-3" onSubmit={handleSubmit}>
         <CardChooseProfile
-          image={mentorIcon}
+          image={{ src: mentorIcon, alt: 'notebook com uma mêntora' }}
           title="Mentor (a) - Compartilhe sua experiência"
           description="Ajude estudantes a se descobrirem! Compartilhe suas experiências e oriente-os com dicas práticas para o futuro."
           inputRadio={{ value: 'mentor', name: 'profile' }}
           onChange={() => setProfileType('mentor')}
         />
         <CardChooseProfile
-          image={studentIcon}
+          image={{ src: studentIcon, alt: 'Chapéu de formatura' }}
           title="Aluno (a) - Aprenda com especialistas"
-          description={`Aprenda com especialistas e receba orientações valiosas de quem já passou 
-            pelo que você está vivendo. Descubra novas oportunidades e direcione sua carreira`}
+          description={`Descubra novas oportunidades e direcione  sua carreira. Aprenda com especialistas 
+            e receba orientações valiosas de quem já passou pelo que você está vivendo.`}
           inputRadio={{ value: 'aluno', name: 'profile' }}
           onChange={() => setProfileType('aluno')}
         />
-        <PrimaryButton className="mt-3" type="submit">
+        <button className="primary-button mt-3" type="submit">
           Continuar
-        </PrimaryButton>
+        </button>
       </form>
     </div>
   );

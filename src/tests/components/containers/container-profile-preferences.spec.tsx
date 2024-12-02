@@ -18,7 +18,7 @@ describe('ContainerProfilePreferences', () => {
       'Ajude estudantes a se descobrirem! Compartilhe suas experiências e oriente-os com dicas práticas para o futuro.',
     );
     expect(descAluno).toHaveTextContent(
-      'Aprenda com especialistas e receba orientações valiosas de quem já passou pelo que você está vivendo. Descubra novas oportunidades e direcione sua carreira',
+      'Descubra novas oportunidades e direcione sua carreira. Aprenda com especialistas e receba orientações valiosas de quem já passou pelo que você está vivendo.',
     );
     expect(button).toBeInTheDocument();
   });

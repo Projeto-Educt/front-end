@@ -1,7 +1,7 @@
 .card:has(input[type='radio']:checked) {
   @apply border-primary-600 bg-primary-50 text-primary-600;
 
-  & .paragraph {
+  & .paragraph-description {
     @apply text-primary-600;
   }
 
