@@ -5,7 +5,19 @@
     @apply text-primary-600;
   }
 
+  & .container-radio {
+    @apply border-primary-600 bg-primary-600;
+  }
+
   & img {
     filter: invert(20%) sepia(62%) saturate(4000%) hue-rotate(200deg) brightness(95%) contrast(85%);
+  }
+}
+
+.container-radio {
+  @apply flex items-center h-4 w-4 rounded-full border border-gray-300 my-auto mx-2 cursor-pointer;
+
+  & .input-radio {
+    @apply opacity-0;
   }
 }

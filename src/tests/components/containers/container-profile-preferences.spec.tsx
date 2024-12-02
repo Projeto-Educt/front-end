@@ -6,11 +6,10 @@ describe('ContainerProfilePreferences', () => {
     render(<ContainerProfilePreferences />);
 
     const heading = screen.getByRole('heading', { name: 'Qual é o seu perfil?' });
-    const [stagesCompleted, description, descMentor, descAluno] = screen.getAllByRole('paragraph');
+    const [description, descMentor, descAluno] = screen.getAllByRole('paragraph');
     const button = screen.getByRole('button', { name: 'Continuar' });
 
     expect(heading).toBeInTheDocument();
-    expect(stagesCompleted).toHaveTextContent('0/2 - Etapas completadas');
     expect(description).toHaveTextContent(
       'Cadastre-se como mentor(a) ou aluno(a) e faça parte da nossa comunidade. Transforme sua jornada de aprendizado ou compartilhe seu conhecimento.',
     );
@@ -28,17 +27,15 @@ describe('ContainerProfilePreferences', () => {
 
     let heading = screen.queryByRole('heading', { name: 'Nos diga mais sobre você' });
 
-    const [stagesCompleted, description, descMentor, descAluno] = screen.getAllByRole('paragraph');
+    const [description, descMentor, descAluno] = screen.getAllByRole('paragraph');
     const [inputMentor] = screen.getAllByRole('radio');
     const button = screen.getByRole('button', { name: 'Continuar' });
 
     expect(heading).not.toBeInTheDocument();
-    expect(stagesCompleted).toHaveTextContent('0/2 - Etapas completadas');
 
     fireEvent.click(inputMentor);
     fireEvent.click(button);
 
-    expect(stagesCompleted).toHaveTextContent('1/2 - Etapas completadas');
     expect(description).not.toBeInTheDocument();
     expect(descMentor).not.toBeInTheDocument();
     expect(descAluno).not.toBeInTheDocument();
@@ -52,17 +49,15 @@ describe('ContainerProfilePreferences', () => {
 
     let heading = screen.queryByRole('heading', { name: 'Nos diga mais sobre você' });
 
-    const [stagesCompleted, , descMentor] = screen.getAllByRole('paragraph');
+    const [, descMentor] = screen.getAllByRole('paragraph');
     const [inputMentor] = screen.getAllByRole('radio');
     const button = screen.getByRole('button', { name: 'Continuar' });
 
     expect(heading).not.toBeInTheDocument();
-    expect(stagesCompleted).toHaveTextContent('0/2 - Etapas completadas');
 
     fireEvent.click(inputMentor);
     fireEvent.click(button);
 
-    expect(stagesCompleted).toHaveTextContent('1/2 - Etapas completadas');
     expect(descMentor).not.toBeInTheDocument();
 
     heading = screen.getByRole('heading', { name: 'Nos diga mais sobre você' });
@@ -70,8 +65,6 @@ describe('ContainerProfilePreferences', () => {
 
     const buttonBack = screen.getByRole('button', { name: 'Voltar' });
     fireEvent.click(buttonBack);
-
-    expect(stagesCompleted).toHaveTextContent('0/2 - Etapas completadas');
 
     heading = screen.getByRole('heading', { name: 'Qual é o seu perfil?' });
     expect(heading).toBeInTheDocument();

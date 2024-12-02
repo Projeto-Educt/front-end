@@ -15,16 +15,7 @@ export default function Stages({ totalStages, currentStage }: IStages) {
 
   return (
     <>
-      <p className="text-gray-500 text-xs mb-1">
-        <span className={`${currentStageIndex !== 0 && 'text-primary-600'}`}>
-          {currentStageIndex}
-        </span>
-        /{totalStages} -{' '}
-        <span className={`${currentStageIndex !== 0 && 'text-primary-600'}`}>
-          Etapas completadas
-        </span>
-      </p>
-      <div className="flex gap-1">
+      <div className="flex gap-1 justify-center">
         {stageArray.map((_, index) => {
           const isCompleted = index < currentStageIndex;
           return (

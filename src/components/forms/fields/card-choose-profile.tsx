@@ -39,15 +39,17 @@ export default function CardChooseProfile({
           <p className="paragraph-description text-xs p-0">{description}</p>
         </div>
       </div>
-      <input
-        className="cursor-pointer input-radio"
-        type="radio"
-        id={inputRadio.value}
-        name={inputRadio.name}
-        value={inputRadio.value}
-        onChange={() => onChange?.(inputRadio.value)}
-        role="radio"
-      />
+      <div className="container-radio">
+        <input
+          className="cursor-pointer input-radio"
+          type="radio"
+          id={inputRadio.value}
+          name={inputRadio.name}
+          value={inputRadio.value}
+          onChange={() => onChange?.(inputRadio.value)}
+          role="radio"
+        />
+      </div>
     </div>
   );
 }
