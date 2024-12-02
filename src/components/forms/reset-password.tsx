@@ -1,9 +1,5 @@
 'use client';
 
-import padlock from '@public/images/padlock.svg';
-import Image from 'next/image';
-import PrimaryButton from '../button/primary-button';
-import PrimaryTitle from '../titles/primary-title';
 import InputPassword from './fields/input-password';
 
 interface IResetPasswordForm {
@@ -17,16 +13,13 @@ export default function ResetPasswordForm({ changeOnSubmit }: IResetPasswordForm
   };
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-3 max-w-md">
-      <Image className="w-40 h-40" src={padlock} alt="Cadeado" />
-      <PrimaryTitle title="Redefinir senha" />
-      <p className="py-2">
-        Insira uma nova senha para acessar sua conta. Lembre-se de escolher uma senha segura e fácil
-        de lembrar.
-      </p>
-      <span className="py-2">Preencha os campos abaixo:</span>
+      <h1 className="primary-title">Redefinir sua senha</h1>
+      <p className="paragraph-description">Insira uma nova senha para acessar sua conta.</p>
       <InputPassword label="senha" />
       <InputPassword label="Repetir senha" />
-      <PrimaryButton type="submit">Confirmar</PrimaryButton>
+      <button className="primary-button" type="submit">
+        Confirmar
+      </button>
     </form>
   );
 }

@@ -3,7 +3,7 @@
 import '@/styles/components/forms/fields/input.scss';
 import { useState } from 'react';
 
-interface IInput {
+export interface IInput {
   type?: 'text' | 'email' | 'password' | 'number' | 'tel' | 'date' | 'time';
   label: string;
   id?: string;
@@ -29,6 +29,7 @@ export default function Input({ type, label, id, name, value, onChange }: IInput
         name={name || label}
         value={inputValue}
         onChange={onChangeInput}
+        role="textbox"
       />
       <label className="label" htmlFor={id || label}>
         {label}

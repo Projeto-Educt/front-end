@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { useState } from 'react';
 import Input from './input';
 
-interface IInputPassword {
+export interface IInputPassword {
   type?: 'text' | 'password';
   label: string;
   id?: string;
@@ -20,7 +20,7 @@ export default function InputPassword(props: IInputPassword) {
   return (
     <div className="relative w-full">
       <Input type={showPassword ? 'text' : 'password'} {...props} />
-      <i className="inline-block p-2 cursor-pointer absolute top-0 right-1">
+      <i className="inline-block p-2 cursor-pointer absolute top-[1px] right-1 bg-white z-10">
         {showPassword && (
           <Image src={openEye} alt="Olho Aberto" onClick={() => setShowPassword(false)} />
         )}

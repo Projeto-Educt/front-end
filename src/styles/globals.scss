@@ -8,3 +8,31 @@
   padding: 0;
   @apply font-sans;
 }
+
+.primary-title {
+  @apply text-3xl font-bold text-center sm:text-start;
+}
+
+.primary-link {
+  @apply text-primary-600 underline inline-block w-full;
+}
+
+.primary-button {
+  @apply text-white bg-primary-600 rounded-md h-10 text-center w-full font-bold;
+}
+
+.primary-banner {
+  @apply hidden sm:block sm:!w-[130%];
+
+  & .img-banner {
+    @apply w-full h-screen object-cover p-2 rounded-3xl;
+  }
+}
+
+.paragraph-description {
+  @apply text-center sm:text-start text-gray-600 py-2 w-full;
+}
+
+.secondary-button {
+  @apply text-primary-600 bg-white border border-primary-600 rounded-md h-10 text-center w-full font-bold;
+}

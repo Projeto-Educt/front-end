@@ -1,19 +1,20 @@
-import PrimaryButton from '@/components/button/primary-button';
 import Input from '@/components/forms/fields/input';
 import InputPassword from '@/components/forms/fields/input-password';
-import PrimaryTitle from '@/components/titles/primary-title';
 
 export default function LoginForm() {
   return (
-    <form className="p-4 max-w-md flex flex-col items-center sm:items-start gap-3">
-      <PrimaryTitle title="Entre na sua conta" />
+    <form className="max-w-md flex flex-col items-center sm:items-start gap-3">
+      <h1 className="primary-title">Faça o seu Login</h1>
       <div className="text-center sm:text-start">
-        <p className="py-2">Faça login para acessar sua conta e continuar sua jornada conosco</p>
-        <span className="py-2">Preencha os campos abaixo:</span>
+        <p className="py-2 paragraph-description">
+          Faça login para acessar sua conta e continuar sua jornada conosco
+        </p>
       </div>
-      <Input label="Insira seu e-mail" />
+      <Input label="Insira seu e-mail" type="email" />
       <InputPassword label="Senha" />
-      <PrimaryButton type="submit">Confirmar</PrimaryButton>
+      <button className="primary-button" type="submit">
+        Confirmar
+      </button>
     </form>
   );
 }

@@ -6,6 +6,7 @@ const config: Config = {
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
     './src/layout/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/stories/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     extend: {
@@ -29,6 +30,7 @@ const config: Config = {
           900: '#1a1b1f',
         },
         primary: {
+          50: '#F0F3FF',
           100: '#dbe1f5',
           200: '#b7c3ea',
           300: '#93a4e0',

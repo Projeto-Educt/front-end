@@ -40,3 +40,6 @@ next-env.d.ts
 .env.development
 .pnpm-store
 .env
+.cache
+
+**/__snapshots__/

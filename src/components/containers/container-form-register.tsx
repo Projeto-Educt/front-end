@@ -2,6 +2,7 @@
 
 import RegisterUserForm from '@/components/forms/register-user';
 import ConfirmEmail from '@/components/infos/confirm-email';
+import Link from 'next/link';
 import { useState } from 'react';
 
 export default function ContainerFormRegister() {
@@ -13,7 +14,14 @@ export default function ContainerFormRegister() {
   return (
     <>
       {!registeredUser && <RegisterUserForm changeOnSubmit={handleRegisterUser} />}
-      {registeredUser && <ConfirmEmail />}
+      {registeredUser && (
+        <div className="max-w-md">
+          <ConfirmEmail />
+          <Link className="primary-link text-center mt-20" href="/">
+            Voltar ao início
+          </Link>
+        </div>
+      )}
     </>
   );
 }

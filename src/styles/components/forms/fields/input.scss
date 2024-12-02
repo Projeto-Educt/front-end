@@ -4,35 +4,37 @@
 
 .container-input-label {
   @apply relative bg-transparent w-full;
-}
-.label {
-  @apply absolute text-gray-500 z-10;
-  left: 12px;
-  top: 25%;
-  transition:
-    top 0.5s ease,
-    color 0.3s ease;
-}
-.span-line {
-  @apply relative block w-[105%] h-0.5 bg-white left-[-2px] top-[-8px] z-[-1];
-}
 
-.input {
-  @apply border border-gray-300 rounded-md px-3 py-2 w-full bg-transparent;
+  .label {
+    @apply absolute text-gray-500 z-10 capitalize;
+    left: 12px;
+    top: 22%;
+    transition:
+      top 0.5s ease,
+      color 0.3s ease;
+  }
+  .span-line {
+    @apply relative block h-0.5 bg-white left-[-2px] top-[-8px] z-[-1];
+    width: calc(100% + 4px);
+  }
 
-  &:focus {
-    @apply text-gray-900 ring-1 ring-primary-600 outline-none;
+  .input {
+    @apply border border-gray-300 rounded-md px-3 py-2 w-full bg-transparent;
 
-    & ~ .label {
-      @apply text-primary-600 top-[-9px] text-xs;
+    &:focus {
+      @apply text-gray-900 ring-1 ring-primary-400 outline-none;
+
+      & ~ .label {
+        @apply text-primary-400 top-[-9px] text-xs;
+      }
     }
   }
-}
 
-.input-has-value {
-  @apply ring-1 ring-primary-600 outline-none text-gray-900;
+  .input-has-value {
+    @apply ring-1 ring-primary-400 outline-none text-gray-900;
 
-  & ~ .label {
-    @apply text-primary-600 top-[-9px] text-xs;
+    & ~ .label {
+      @apply text-primary-400 top-[-9px] text-xs;
+    }
   }
 }
