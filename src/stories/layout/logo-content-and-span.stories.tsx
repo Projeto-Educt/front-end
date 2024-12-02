@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import type { ILogoContentAndSpan } from '@/layout/logo-content';
+import type { ILogoContent } from '@/layout/logo-content';
 import LogoContentAndSpan from '@/layout/logo-content';
 
 export default {
@@ -11,7 +11,7 @@ export default {
   },
 };
 
-export const Template = (args: ILogoContentAndSpan) => {
+export const Template = (args: ILogoContent) => {
   return (
     <div>
       <LogoContentAndSpan {...args} />
