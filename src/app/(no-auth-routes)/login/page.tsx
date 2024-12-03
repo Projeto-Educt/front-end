@@ -9,7 +9,7 @@ export default function Login() {
   return (
     <GridTwoLayout
       columnOne={{
-        className: '!w-[70%]',
+        className: 'sm:!w-[70%]',
         children: (
           <LogoContentAndSpan>
             <div className="max-w-md">
