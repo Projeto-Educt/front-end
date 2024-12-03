@@ -8,7 +8,7 @@ export default function ConfirmedEmail() {
   return (
     <GridTwoLayout
       columnOne={{
-        className: '!w-[70%]',
+        className: 'sm:!w-[70%]',
         children: (
           <LogoContentAndSpan>
             <ConfirmedEmailComponent />
