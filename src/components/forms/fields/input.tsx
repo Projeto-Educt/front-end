@@ -1,7 +1,7 @@
 'use client';
 
 import '@/styles/components/forms/fields/input.scss';
-import { useState } from 'react';
+import React, { useRef } from 'react';
 
 export interface IInput {
   type?: 'text' | 'email' | 'password' | 'number' | 'tel' | 'date' | 'time';
@@ -13,23 +13,25 @@ export interface IInput {
 }
 
 export default function Input({ type, label, id, name, value, onChange }: IInput) {
-  const [inputValue, setInputValue] = useState<string>(value || '');
+  const inputValue = useRef<string | undefined>(value);
 
   const onChangeInput = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setInputValue(event.target.value);
+    inputValue.current = event.target.value;
     onChange?.(event);
   };
 
   return (
     <div className="container-input-label">
       <input
-        className={`input ${inputValue && 'input-has-value'}`}
+        className={`input ${inputValue.current && 'input-has-value'}`}
+        required
         type={type || 'text'}
         id={id || label}
         name={name || label}
-        value={inputValue}
-        onChange={onChangeInput}
+        value={inputValue.current}
+        onChange={event => onChangeInput(event)}
         role="textbox"
+        placeholder="none"
       />
       <label className="label" htmlFor={id || label}>
         {label}
