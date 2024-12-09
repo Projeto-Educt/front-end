@@ -28,13 +28,17 @@
         @apply text-primary-400 top-[-9px] text-xs;
       }
     }
-  }
 
-  .input-has-value {
-    @apply ring-1 ring-primary-400 outline-none text-gray-900;
+    &::placeholder {
+      @apply text-transparent;
+    }
 
-    & ~ .label {
-      @apply text-primary-400 top-[-9px] text-xs;
+    &:not(:placeholder-shown) {
+      @apply ring-1 ring-gray-900 outline-none text-gray-900;
+
+      & ~ .label {
+        @apply text-gray-900 top-[-9px] text-xs;
+      }
     }
   }
 }

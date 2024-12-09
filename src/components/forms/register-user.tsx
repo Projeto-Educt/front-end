@@ -1,6 +1,5 @@
 import Input from '@/components/forms/fields/input';
 import InputPassword from '@/components/forms/fields/input-password';
-import Link from 'next/link';
 
 interface IRegisterUserForm {
   changeOnSubmit?: () => void;
@@ -30,13 +29,6 @@ export default function RegisterUserForm({ changeOnSubmit }: IRegisterUserForm) 
         <button className="primary-button" type="submit">
           Confirmar
         </button>
-
-        <p className="paragraph-description sm:text-center">
-          Ja tem uma conta?{' '}
-          <Link className="primary-link inline" href="/login">
-            Faça o Login
-          </Link>
-        </p>
       </div>
     </form>
   );

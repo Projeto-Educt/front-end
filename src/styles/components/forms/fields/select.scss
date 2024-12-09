@@ -36,10 +36,10 @@
 }
 
 .has-value {
-  @apply border-primary-400;
+  @apply border-gray-900;
 
   & .label {
-    @apply text-primary-600 top-[-22%] left-3 text-xs;
+    @apply text-gray-900 top-[-22%] left-3 text-xs;
 
     & .span-line {
       @apply bg-white inline-block h-2 absolute top-1 z-[-1] ms-[-3px];
