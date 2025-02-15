@@ -10,7 +10,7 @@ export interface ILinkMemo {
 
 function LinkMemo({ children, href, className, target = '_self' }: ILinkMemo) {
   return (
-    <Link href={href} target={target} className={`primary-link ${className}`}>
+    <Link href={href} target={target} prefetch={false} className={`primary-link ${className}`}>
       {children}
     </Link>
   );

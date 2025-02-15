@@ -7,7 +7,10 @@ export interface ILogoContent {
 
 export default function LogoContent({ children }: ILogoContent) {
   return (
-    <article className="px-8 pt-32 pb-3 relative flex flex-col justify-center min-h-screen">
+    <article
+      className="px-8 pt-32 pb-3 relative flex flex-col justify-center 
+    min-h-screen"
+    >
       <Image className="absolute top-8" src={logo} alt="Logotipo de Educt" />
       <div className="mx-auto sm:mx-0">{children}</div>
     </article>
