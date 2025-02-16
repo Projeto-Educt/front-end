@@ -4,7 +4,7 @@ import Input from '@/components/forms/fields/input';
 import InputPassword from '@/components/forms/fields/input-password';
 import { useForm } from 'react-hook-form';
 
-export interface IFormData {
+interface IFormData {
   email: string;
   password: string;
 }
