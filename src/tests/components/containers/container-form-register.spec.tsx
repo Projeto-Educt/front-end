@@ -1,5 +1,5 @@
 import ContainerFormRegister from '@/components/containers/container-form-register';
-import { fireEvent, render, screen } from '@testing-library/react';
+import { act, fireEvent, render, screen } from '@testing-library/react';
 
 describe('ContainerFormRegister', () => {
   it('should render correctly', () => {
@@ -17,7 +17,7 @@ describe('ContainerFormRegister', () => {
     expect(link).toHaveAttribute('href', '/login');
   });
 
-  it('Should change component', () => {
+  it('Should change component', async () => {
     render(<ContainerFormRegister />);
 
     let heading = screen.queryByRole('heading', { name: 'Confirme seu e-mail' });
@@ -32,7 +32,9 @@ describe('ContainerFormRegister', () => {
     fireEvent.change(inputPassword, { target: { value: '@Password123' } });
     fireEvent.change(inputPasswordRepeat, { target: { value: '@Password123' } });
 
-    fireEvent.click(button);
+    await act(async () => {
+      fireEvent.click(button);
+    });
 
     expect(inputName).not.toBeInTheDocument();
     expect(inputEmail).not.toBeInTheDocument();

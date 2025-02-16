@@ -1,42 +1,55 @@
 'use client';
 
 import '@/styles/components/forms/fields/input.scss';
-import React, { useRef } from 'react';
+import AlertIcon from '@public/icons/Alert.svg';
+import Image from 'next/image';
+import type { UseFormRegisterReturn } from 'react-hook-form';
 
-export interface IInput {
+export interface IInput extends React.InputHTMLAttributes<HTMLInputElement> {
   type?: 'text' | 'email' | 'password' | 'number' | 'tel' | 'date' | 'time';
   label: string;
   id?: string;
   name?: string;
-  value?: string;
-  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  register?: UseFormRegisterReturn<string>;
+  onChange?: () => void;
+  messageError?: string;
 }
 
-export default function Input({ type, label, id, name, value, onChange }: IInput) {
-  const inputValue = useRef<string | undefined>(value);
-
-  const onChangeInput = (event: React.ChangeEvent<HTMLInputElement>) => {
-    inputValue.current = event.target.value;
-    onChange?.(event);
-  };
-
+export default function Input({
+  type,
+  label,
+  id,
+  messageError,
+  register,
+  onChange,
+  ...props
+}: IInput) {
   return (
-    <div className="container-input-label">
+    <div className="container-input-label min-h-[52px]">
       <input
-        className={`input ${inputValue.current && 'input-has-value'}`}
+        className={`input ${messageError && 'input-error'}`}
         required
         type={type || 'text'}
         id={id || label}
-        name={name || label}
-        value={inputValue.current}
-        onChange={event => onChangeInput(event)}
+        name={id || label}
         role="textbox"
         placeholder="none"
+        onChange={() => onChange?.()}
+        {...props}
+        {...register}
       />
       <label className="label" htmlFor={id || label}>
         {label}
         <span className="span-line"></span>
       </label>
+      {messageError && (
+        <div className="flex space-x-1 items-center absolute">
+          <span>
+            <Image src={AlertIcon} alt="Ícone de Alerta" className="w-3" />
+          </span>
+          <p className="text-[10px] text-red-300">{messageError}</p>
+        </div>
+      )}
     </div>
   );
 }

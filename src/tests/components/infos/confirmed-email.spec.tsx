@@ -8,7 +8,7 @@ describe('ConfirmedEmail', () => {
     const img = screen.getByRole('img', { name: 'Carta aberta' });
     const heading = screen.getByRole('heading', { name: 'E-mail Confirmado!' });
     const paragraph = screen.getByRole('paragraph');
-    const link = screen.getByRole('link', { name: 'Continuar' });
+    const link = screen.getByRole('link', { name: 'continuar' });
 
     expect(img).toBeInTheDocument();
     expect(heading).toBeInTheDocument();

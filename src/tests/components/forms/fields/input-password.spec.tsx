@@ -1,5 +1,5 @@
 import InputPassword from '@/components/forms/fields/input-password';
-import { fireEvent, render, screen } from '@testing-library/react';
+import { act, fireEvent, render, screen } from '@testing-library/react';
 
 describe('Input', () => {
   it('should render correctly', () => {
@@ -7,7 +7,7 @@ describe('Input', () => {
 
     const input = screen.getByRole('textbox');
     const label = screen.getByText('label');
-    const icon = screen.getByRole('img', { name: 'Olho Fechado' });
+    const icon = screen.getByRole('img', { name: 'Olho Aberto' });
 
     expect(input).toBeInTheDocument();
     expect(label).toBeInTheDocument();
@@ -46,31 +46,33 @@ describe('Input', () => {
 
     const input = screen.getByRole('textbox') as HTMLInputElement;
     const label = screen.getByText('label');
-    let iconClosedEye = screen.getByRole('img', { name: 'Olho Fechado' });
-    let iconOpenEye = screen.queryByRole('img', { name: 'Olho Aberto' });
+    let iconOpenEye = screen.getByRole('img', { name: 'Olho Aberto' });
+    let iconClosedEye = screen.queryByRole('img', { name: 'Olho Fechado' });
 
     expect(input).toBeInTheDocument();
     expect(label).toBeInTheDocument();
-    expect(iconClosedEye).toBeInTheDocument();
-    expect(iconOpenEye).not.toBeInTheDocument();
+    expect(iconOpenEye).toBeInTheDocument();
+    expect(iconClosedEye).not.toBeInTheDocument();
 
-    fireEvent.change(input, { target: { value: 'value' } });
+    await act(async () => {
+      fireEvent.change(input, { target: { value: 'value' } });
+    });
 
     expect(input).toHaveValue('value');
     expect(input).toHaveAttribute('type', 'password');
 
-    fireEvent.click(iconClosedEye);
+    fireEvent.click(iconOpenEye);
     expect(input).toHaveAttribute('type', 'text');
 
-    iconOpenEye = screen.getByRole('img', { name: 'Olho Aberto' });
-    expect(iconOpenEye).toBeInTheDocument();
-    expect(iconClosedEye).not.toBeInTheDocument();
-
-    fireEvent.click(iconOpenEye);
     iconClosedEye = screen.getByRole('img', { name: 'Olho Fechado' });
+    expect(iconClosedEye).toBeInTheDocument();
+    expect(iconOpenEye).not.toBeInTheDocument();
+
+    fireEvent.click(iconClosedEye);
+    iconOpenEye = screen.getByRole('img', { name: 'Olho Aberto' });
 
     expect(input).toHaveAttribute('type', 'password');
-    expect(iconOpenEye).not.toBeInTheDocument();
-    expect(iconClosedEye).toBeInTheDocument();
+    expect(iconClosedEye).not.toBeInTheDocument();
+    expect(iconOpenEye).toBeInTheDocument();
   });
 });

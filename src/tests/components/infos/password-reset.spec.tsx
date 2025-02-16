@@ -8,7 +8,7 @@ describe('PasswordReset', () => {
     const img = screen.getByRole('img', { name: 'Senha alterada com sucesso' });
     const heading = screen.getByRole('heading', { name: 'Sua senha foi alterada com sucesso!' });
     const paragraph = screen.getByRole('paragraph');
-    const link = screen.getByRole('link', { name: 'Fazer Login' });
+    const link = screen.getByRole('button', { name: 'Fazer Login' });
 
     expect(img).toBeInTheDocument();
     expect(heading).toBeInTheDocument();

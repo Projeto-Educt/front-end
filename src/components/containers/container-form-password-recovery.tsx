@@ -4,6 +4,7 @@ import PasswordRecoveryForm from '@/components/forms/password-recovery';
 import SendLinkToPasswordRecovery from '@/components/infos/send-link-to-password-recovery';
 import Link from 'next/link';
 import { useState } from 'react';
+import LinkMemo from '../memos/link-memo';
 import ParagraphMemo from '../memos/paragraph-memo';
 
 export default function ContainerFormPasswordRecovery() {
@@ -30,9 +31,9 @@ export default function ContainerFormPasswordRecovery() {
       {sendEmail && (
         <>
           <SendLinkToPasswordRecovery />
-          <Link className="primary-link mt-10 text-center" href="/login">
+          <LinkMemo className="primary-link mt-10 text-center" href="/login">
             Voltar ao inicio
-          </Link>
+          </LinkMemo>
         </>
       )}
     </div>

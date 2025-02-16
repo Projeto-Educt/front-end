@@ -10,12 +10,12 @@ export default function Login() {
     <div className="layout-grid-two">
       <LogoContentAndSpan>
         <LoginForm />
-        <LinkMemo href="./password-recovery" className="py-4">
+        <LinkMemo href="./password-recovery" className="py-4 w-40">
           Esqueci minha senha
         </LinkMemo>
         <ParagraphMemo className="text-center mt-20">
           Não tem uma conta?
-          <LinkMemo className="inline font-bold" href="./register-user">
+          <LinkMemo className="inline font-bold ms-1" href="./register-user">
             Crie sua conta grátis
           </LinkMemo>
         </ParagraphMemo>

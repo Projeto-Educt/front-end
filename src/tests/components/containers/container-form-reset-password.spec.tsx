@@ -1,5 +1,5 @@
 import ContainerFormResetPassword from '@/components/containers/container-form-reset-password';
-import { fireEvent, render, screen } from '@testing-library/react';
+import { act, fireEvent, render, screen } from '@testing-library/react';
 
 describe('ContainerFormResetPassword', () => {
   it('should render correctly', () => {
@@ -15,7 +15,7 @@ describe('ContainerFormResetPassword', () => {
     expect(inputs).toHaveLength(2);
   });
 
-  it('Should change component', () => {
+  it('Should change component', async () => {
     render(<ContainerFormResetPassword />);
 
     let heading = screen.queryByRole('heading', { name: 'Sua senha foi alterada com sucesso!' });
@@ -24,9 +24,11 @@ describe('ContainerFormResetPassword', () => {
 
     expect(heading).not.toBeInTheDocument();
 
-    fireEvent.change(inputPassword, { target: { value: '@Password123' } });
-    fireEvent.change(inputPasswordRepeat, { target: { value: '@Password123' } });
-    fireEvent.click(button);
+    await act(async () => {
+      fireEvent.change(inputPassword, { target: { value: '@Password123' } });
+      fireEvent.change(inputPasswordRepeat, { target: { value: '@Password123' } });
+      fireEvent.click(button);
+    });
 
     expect(inputPassword).not.toBeInTheDocument();
     expect(inputPasswordRepeat).not.toBeInTheDocument();
