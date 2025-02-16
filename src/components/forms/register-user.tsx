@@ -25,7 +25,7 @@ export default function RegisterUserForm({ changeOnSubmit }: IRegisterUserForm) 
 
   const onSubmit = ({ password, confirmPassword }: IFormData) => {
     if (password !== confirmPassword) {
-      setError('confirmPassword', { message: 'As senhas devem ser iguais.' });
+      setError('confirmPassword', { message: 'As senhas não coincidem.' });
       return;
     }
 
@@ -46,7 +46,7 @@ export default function RegisterUserForm({ changeOnSubmit }: IRegisterUserForm) 
         <Input
           label="Nome Completo"
           register={register('completeName', {
-            required: 'O campo nome é obrigatório.',
+            required: 'Por favor, insira seu nome completo.',
             minLength: { value: 7, message: 'Por favor, insira seu nome completo.' },
             maxLength: { value: 100, message: 'O nome deve ter no máximo 100 caracteres.' },
             pattern: {
@@ -55,6 +55,8 @@ export default function RegisterUserForm({ changeOnSubmit }: IRegisterUserForm) 
             },
             validate: value => {
               const valueSplit = value.trim().split(' ');
+              if (valueSplit.some(word => !/^[a-zA-ZÀ-ÿ\s-]+$/.test(word)))
+                return 'O nome deve conter apenas letras, espaços e hifens.';
               if (valueSplit.some(word => word.length < 3) && valueSplit.length > 1)
                 return 'Não use abreviações (Ex: João S. Pedro).';
               if (valueSplit.length < 2) return 'Por favor, insira seu nome completo.';
