@@ -1,5 +1,5 @@
 import ContainerFormPasswordRecovery from '@/components/containers/container-form-password-recovery';
-import { fireEvent, render, screen } from '@testing-library/react';
+import { act, fireEvent, render, screen } from '@testing-library/react';
 
 describe('ContainerFormPasswordRecovery', () => {
   it('should render correctly', () => {
@@ -14,8 +14,8 @@ describe('ContainerFormPasswordRecovery', () => {
     expect(button).toBeInTheDocument();
     expect(paragraphs).toHaveLength(2);
 
-    expect(input).toHaveAttribute('type', 'email');
-    expect(input).toHaveAttribute('name', 'Insira seu e-mail');
+    expect(input).toHaveAttribute('type', 'text');
+    expect(input).toHaveAttribute('name', 'email');
   });
 
   it('should render correctly login link', () => {
@@ -27,7 +27,7 @@ describe('ContainerFormPasswordRecovery', () => {
     expect(link).toHaveAttribute('href', '/login');
   });
 
-  it('Should change layout in submit form', () => {
+  it('Should change layout in submit form', async () => {
     render(<ContainerFormPasswordRecovery />);
 
     let heading = screen.queryByRole('heading', { name: 'Link para redefinir senha enviado' });
@@ -36,10 +36,14 @@ describe('ContainerFormPasswordRecovery', () => {
 
     expect(heading).not.toBeInTheDocument();
 
-    fireEvent.change(input, { target: { value: 'test@test.com' } });
+    await act(async () => {
+      fireEvent.change(input, { target: { value: 'test@test.com' } });
+    });
     expect(input).toHaveValue('test@test.com');
 
-    fireEvent.click(button);
+    await act(async () => {
+      fireEvent.click(button);
+    });
     expect(input).not.toBeInTheDocument();
     expect(button).not.toBeInTheDocument();
 

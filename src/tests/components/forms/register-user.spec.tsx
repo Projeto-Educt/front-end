@@ -122,7 +122,6 @@ describe('RegisterUserForm', () => {
       expect(screen.getByText(element.error)).toBeInTheDocument();
     }
   });
-
   it('Should render error if passwords do not match', async () => {
     render(<RegisterUserForm />);
     const [inputName, inputEmail, inputPassword, inputPasswordRepeat] =
