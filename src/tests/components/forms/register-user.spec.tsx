@@ -33,12 +33,12 @@ describe('RegisterUserForm', () => {
       screen.getAllByRole('textbox');
 
     expect(inputName).toHaveAttribute('type', 'text');
-    expect(inputName).toHaveAttribute('name', 'Nome Completo');
-    expect(inputEmail).toHaveAttribute('type', 'email');
-    expect(inputEmail).toHaveAttribute('name', 'E-mail');
+    expect(inputName).toHaveAttribute('name', 'completeName');
+    expect(inputEmail).toHaveAttribute('type', 'text');
+    expect(inputEmail).toHaveAttribute('name', 'email');
     expect(inputPassword).toHaveAttribute('type', 'password');
-    expect(inputPassword).toHaveAttribute('name', 'Senha + 6 caracteres');
+    expect(inputPassword).toHaveAttribute('name', 'password');
     expect(inputPasswordRepeat).toHaveAttribute('type', 'password');
-    expect(inputPasswordRepeat).toHaveAttribute('name', 'Repetir senha');
+    expect(inputPasswordRepeat).toHaveAttribute('name', 'confirmPassword');
   });
 });

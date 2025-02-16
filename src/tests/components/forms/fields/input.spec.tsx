@@ -1,5 +1,5 @@
 import Input from '@/components/forms/fields/input';
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 
 describe('Input', () => {
   it('should render correctly', () => {
@@ -32,12 +32,10 @@ describe('Input', () => {
     expect(label).toBeInTheDocument();
     expect(input).toHaveValue('');
 
-    input.focus();
-    input.value = 'value';
-    input.dispatchEvent(new Event('change'));
-    expect(input).toHaveValue('value');
-
     label = screen.getByText('label');
     expect(label).toBeInTheDocument();
+
+    fireEvent.change(input, { target: { value: 'value' } });
+    expect(input).toHaveValue('value');
   });
 });
