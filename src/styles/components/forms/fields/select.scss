@@ -1,8 +1,8 @@
 .select {
-  @apply w-full h-[42px] relative rounded-lg p-2 flex items-center border border-gray-200 text-gray-500 bg-white;
+  @apply w-full h-[42px] relative rounded-lg p-2 flex items-center border border-gray-200 text-gray-500 bg-white cursor-pointer;
 
   & .label {
-    @apply absolute z-10 top-[20%] left-2 capitalize;
+    @apply absolute z-10 top-[20%] left-2 capitalize cursor-pointer;
     transition: top 0.3s ease;
     > .span-line {
       @apply hidden;
@@ -10,7 +10,7 @@
   }
 
   & .options {
-    @apply absolute top-full left-[-1px] rounded-b-lg border border-gray-200 z-20 bg-white;
+    @apply absolute top-full left-[-1px] rounded-b-lg border border-gray-200 z-20 bg-white max-h-40 overflow-auto;
     width: calc(100% + 2px);
   }
 
@@ -19,8 +19,12 @@
   }
 }
 
+.has-error {
+  @apply text-red-300 border-red-300;
+}
+
 .select-open {
-  @apply border-primary-400 border-b-0 rounded-b-none;
+  @apply border-primary-400 border-b-0 rounded-b-none text-gray-500;
   > .options {
     @apply border-primary-400 rounded-md border-t-0 rounded-t-none;
   }

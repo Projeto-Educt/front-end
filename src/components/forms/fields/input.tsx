@@ -1,8 +1,7 @@
 'use client';
 
+import { MessageError } from '@/components/infos/message-error';
 import '@/styles/components/forms/fields/input.scss';
-import AlertIcon from '@public/icons/Alert.svg';
-import Image from 'next/image';
 import type { UseFormRegisterReturn } from 'react-hook-form';
 
 export interface IInput extends React.InputHTMLAttributes<HTMLInputElement> {
@@ -42,14 +41,7 @@ export default function Input({
         {label}
         <span className="span-line"></span>
       </label>
-      {messageError && (
-        <div className="flex space-x-1 items-center absolute">
-          <span>
-            <Image src={AlertIcon} alt="Ícone de Alerta" className="w-3" />
-          </span>
-          <p className="text-[10px] text-red-300">{messageError}</p>
-        </div>
-      )}
+      {messageError && <MessageError messageError={messageError} />}
     </div>
   );
 }

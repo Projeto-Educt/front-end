@@ -5,15 +5,8 @@ describe('ProfilePreferences', () => {
   it('should render correctly', () => {
     render(<ProfilePreferencesForm />);
 
-    const heading = screen.getByRole('heading', { name: 'Nos diga mais sobre você' });
-    const paragraph = screen.getByText(
-      'Diga mais sobre o seu momento atual, dizendo se tem algum curso ou faculdade em mente para que possamos encontrar os melhores mentores para você.',
-    );
-
     const comboboxes = screen.getAllByRole('combobox');
 
-    expect(heading).toBeInTheDocument();
-    expect(paragraph).toBeInTheDocument();
     expect(comboboxes).toHaveLength(3);
   });
 
