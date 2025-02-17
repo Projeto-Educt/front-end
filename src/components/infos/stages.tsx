@@ -6,16 +6,17 @@ import Image from 'next/image';
 export interface IStages {
   totalStages: number;
   currentStage?: number;
+  className?: string;
 }
 
-export default function Stages({ totalStages, currentStage }: IStages) {
+export default function Stages({ totalStages, currentStage, className }: IStages) {
   const currentStageIndex = currentStage || 0;
   const stageArray = Array.from({ length: totalStages });
   const lastStage = stageArray.length - 1;
 
   return (
     <>
-      <div className="flex gap-1 justify-center">
+      <div className={`flex gap-1 justify-center ${className}`}>
         {stageArray.map((_, index) => {
           const isCompleted = index < currentStageIndex;
           return (

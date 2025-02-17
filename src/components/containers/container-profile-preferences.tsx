@@ -16,9 +16,18 @@ export default function ContainerProfilePreferences() {
 
   return (
     <>
-      <Stages totalStages={2} currentStage={stage} />
+      <Stages totalStages={2} currentStage={stage} className={`${stage === 1 && 'mt-[-100px]'}`} />
       {stage === 0 && <ProfileTypeForm onChange={handleProfileType} />}
-      {stage === 1 && <ProfilePreferencesForm onChange={() => setStage(v => v - 1)} />}
+      {stage === 1 && (
+        <div className="max-w-md max-h-[544px] h-full flex flex-col justify-between mt-4 gap-3">
+          <h1 className="primary-title">Nos diga mais sobre você</h1>
+          <p className="paragraph-description">
+            Diga mais sobre o seu momento atual, dizendo se tem algum curso ou faculdade em mente
+            para que possamos encontrar os melhores mentores para você.
+          </p>
+          <ProfilePreferencesForm onChange={() => setStage(v => v - 1)} />
+        </div>
+      )}
     </>
   );
 }

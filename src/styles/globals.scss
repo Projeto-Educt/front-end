@@ -39,3 +39,7 @@
 .layout-grid-two {
   @apply block space-y-10 sm:space-y-0 sm:grid sm:grid-cols-[35%_65%] w-full min-h-screen;
 }
+
+.message-error {
+  @apply text-[10px] text-red-300;
+}
